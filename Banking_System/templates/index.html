@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Bank Transaction System</title>
+</head>
+<body>
+
+    <nav class="navigation" id="menu">
+        <ul>
+            
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'customers' %}">Customers</a></li>
+            <li><a href="{% url 'transactions' %}">Transactions</a></li>
+            
+        </ul>
+
+        <span>Banking System</span>
+    </nav> 
+
+    <div class="container">
+        <div class="leftpanel">
+            <div class="title">
+                <span>Welcome to APNA BANK</span>
+            </div>
+            <a href="{% url 'history' %}"><button class="transaction_history">Transaction History</button></a>
+        </div>
+        
+        <div class="image">
+            <img src="{% static 'images/front.jpg' %}" alt="banking"/>
+        </div>
+    </div>
+</body>
+</html>

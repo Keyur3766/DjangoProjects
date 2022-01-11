@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.navigation{
+    height: 46px;
+    /*background-color: rgb(6, 245, 153);*/
+    background-color: #282A35;;
+    /* background-color:rgba(11, 182, 235, 0.315); */
+    display: flex;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    margin-left: 100px;
+}
+nav ul li{
+    padding: 10px 25px;
+    font-size: 1.4rem;
+    font-family:cursive ;  
+}
+nav ul li:hover{
+    background-color: rgba(0, 0, 255, 0.87);
+}
+
+nav ul li>a{
+    text-decoration: none;
+    color: white;
+}
+
+nav span{
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: auto;
+    margin-left: 700px;
+    color: white;
+}
+
+.container{
+    display: flex;
+    margin: 2px 50px;
+    height: 730px;
+    background-color: rgb(252, 219, 170);
+}
+
+.leftpanel{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.title span{
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'Open Sans', sans-serif;
+    color:mediumblue;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Playfair+Display&display=swap');
+.transaction_history{
+    background-color: rgba(0, 0, 255, 0.87);
+    color: white;
+    border: black 1px;
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.transaction_history:hover{
+    background-color: rgba(0, 0, 255, 0.747);
+}
+
+
+.image{
+    margin: auto;
+}
+.image img{
+    padding: 10px;
+    border-radius: 30px;
+}
+
+
+
+.heading{
+    margin-top: 90px;
+    text-align: center;
+    font-size: -webkit-xxx-large;
+}
+
+table{
+    width: 75%;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 25px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+}
+
+tr,th{
+    /* border: solid 1px; */
+    border-collapse: collapse;
+
+}
+
+.CustomerTable thead tr{
+    background-color: rgba(0, 0, 255, 0.747);
+    /*background-color: #009879;*/
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.CustomerTable th,
+.CustomerTable td {
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.CustomerTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.CustomerTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.CustomerTable tbody tr:last-of-type {
+    border-bottom: 2px solid rgba(0, 0, 255, 0.747);;
+}
+/* th{
+    height: 50px;
+    font-size: 1.3rem;
+    
+}
+td{
+    background-color: aqua;
+    text-align: center;
+    height: 40px;
+} */
+
+.Transaction_heading{
+    Text-align: center;
+    margin-top: 100px;
+}
+
+.form1{
+    margin-top: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form1 select{
+    margin: auto;
+    width: 570px;
+    height: 30px;
+    padding: 3px;
+}
+.internal_form{
+    display: flex;
+    flex-direction: column;
+    
+}
+.verify{
+    margin: auto;
+    background-color: #009879;
+    color: white;
+    border: 1px solid white;
+    margin-top: 12px;
+    padding: 9px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 90px;
+    font-size: medium;
+}
+.verify:hover{
+    background-color: #00987aaf;
+}
+
+.infoSender{
+    /*background-color: #282A35;*/
+    /*color: white;*/
+    /* background-color: cadetblue;
+    
+    
+    text-align: center; */
+    margin-top: 40px;
+}
+.Sender_header{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    width: 40%;
+    box-sizing: border-box;
+    padding: 53px;
+}
+.transaction_container{
+    display: flex;
+    height: 600px;
+}
+
+
+
+
+#User{
+    width: 50px;
+    height: 50px;
+    /* margin: auto; */
+    font-size: 2.0rem;
+    background-color: #282A35;
+    text-align: center;
+    border-radius: 18px;
+    line-height: 50px;
+    color: white;
+    
+}
+.container_form{
+    width: 900px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    
+    margin-left: 0px;
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+.infoSender span{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4rem;
+    display: block;
+
+}
+.sender_upper h2{
+    margin-top: 10px;
+    font-size: 2.0rem;
+}
+
+.choice1 ,.choice2{
+    border: 1px solid blue;
+    padding: 5px;
+    color: white;
+    background-color: #282A35;;
+    cursor: pointer;
+    
+}
+.choice1:hover,.choice2:hover{
+    background-color: #282a35d5;
+}
+
+.choice1>span ,.choice2>span{
+    font-size: 25px;
+}
+
+.choices .active{
+    background-color: rgba(0, 0, 255, 0.87);
+}
+
+.form{
+    margin: auto 0px;
+    height: 300px;
+    background-color:#282A35;
+    border: 1px solid black;
+}
+#usingUPI,#usingACCOUNT{
+    width: 75%;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+}
+
+#usingUPI form, #usingACCOUNT form{
+    margin: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+#usingUPI select, #usingACCOUNT select{
+    width: 430px;
+    padding: 10px;
+    font-size: 16px;
+    padding: 10px 4px;
+    
+}
+
+#usingUPI select>option, #usingACCOUNT select>option{
+    width: 430px;
+    padding: 10px;
+    font-size: 16px;
+    padding: 10px 4px;   
+}
+
+.form span{
+    font-size: 1.4rem;
+    margin-top: 4px;
+    color: white;
+}
+.amount{
+    width: 200px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+table {
+    counter-reset: section;
+}
+  
+.count:before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+
+.btn{
+    margin: auto;
+    background-color: rgba(0, 0, 255, 0.87);
+    color: white;
+    border: 1px solid white;
+    margin-top: 12px;
+    padding: 9px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 90px;
+    font-size: medium;
+    text-align: center;
+}
+.btn:hover{
+    background-color: rgba(0, 0, 255, 0.747);
+}
+
+.transactions{
+    width: 100%;
+}
+.entry{
+    border: 1px solid black;
+    width: 75%;
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 11px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    
+}
+
+.entries{
+    margin-top: 75px;
+}
+
+.part1{
+    width: 80%;
+    margin-left: 15px;
+}
+
+.part2{
+    width: 20%;
+    text-align: right;
+}
+
+.part2 h4{
+    font-size: 20px;
+}
+
+
+#credit_debit{
+    width: 50px;
+    height: 50px;
+    /* margin: auto; */
+    font-size: 2.0rem;
+    background-color: #282A35;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 50px;
+    color: white;
+}
+.part2 p{
+    font-size: 13px;
+}

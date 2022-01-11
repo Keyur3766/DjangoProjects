@@ -1,0 +1,159 @@
+
+<!--Sender account number 
+via Customer UPI:
+
+	upiID
+	when press enter	
+	show balance and other details
+
+or via Customer account number
+	
+	Account number
+	when press enter	
+	show balance and other details
+	
+	
+enter Amount to be transffered
+
+if via UPI change Balance info after tracking account number
+
+if via account number, directly change info
+-->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script src="https://kit.fontawesome.com/c646e69c73.js" crossorigin="anonymous"></script>
+    
+    <title>Bank Transaction System</title>
+</head>
+<body>
+
+    <nav class="navigation">
+        <ul>
+            
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'customers' %}">Customers</a></li>
+            <li><a href="{% url 'transactions' %}">Transactions</a></li>
+            
+        </ul>
+
+        <span>Banking System</span>
+    </nav>
+    
+    
+    <div class="main_container">
+        {% if messages %}
+        <div class="messages" id="messages">
+
+                {% for message in messages %}
+                <h1>{{message}}</h1>
+                {% endfor %}
+            
+        </div>
+        {% endif %}
+        <h1 class="Transaction_heading">Payment Gateway</h1>
+
+    <!-- <div class="form1">
+        <form action="sender_Profile" method="post" class="internal_form">
+            {% csrf_token %}
+            <select id="senderAccountno" name="senderAccountNo" placeholder="Sender Account number">
+                {% for c in all_customers %}   
+                {% if c.accountNo == selectedSender.accountNo %}
+                <option value="{{c.accountNo}}" id="selectedSender" selected>{{c.accountNo}}-{{c.customerName}}</option>
+
+                {% else %}
+                <option value="{{c.accountNo}}" id="selectedSender">{{c.accountNo}}-{{c.customerName}}</option>
+                {% endif %}
+                {% endfor %} 
+            </select>
+            <input type="submit" class="verify" name='verify' value="Verify">
+    </div> -->
+    <div class="transaction_container">
+        <div class="Sender_header">
+            <div class="sender_upper">
+                <i class="fas fa-user" id="User"></i>
+                <h2>Sender: {{selectedSender.customerName}}</h2>
+            </div>
+            
+            
+            <div class="infoSender">
+                <span>Account number: {{selectedSender.accountNo}}</span><br>
+               
+                <span>Balance: {{selectedSender.balance}}</span><br>
+                <span>email: {{selectedSender.email}}</span><br>
+                <span>mobile: {{selectedSender.mobile}}</span>
+            </div>
+        </div>
+        
+        
+    
+        
+        <div class="container_form">
+            <div class="choices">
+                <div class="choice1 active" id="choice1">
+                    <span id="preference1">UPI</span>
+                </div>
+                <div class="choice2" id="choice2">
+                    <span id="preferences">Account Number</span>
+                </div>
+            </div>
+            
+            <div class="form" id="usingUPI">
+    
+                <form action="" name="UPIform" method="post">
+                    {% csrf_token %}
+    
+                    <input  type="hidden" name="senderID" value="{{selectedSender.accountNo}}" />
+                    <span>UPI ID: </span>
+                    <select id="receiver_Account_no" name="receiver_Account_no" placeholder="Sender UPI ID">
+                        {% for c in all_customers%}   
+                        {% if c.accountNo != selectedSender.accountNo %}
+                        <option value="{{c.accountNo}}" id="selectedreceiver">{{c.UPI_ID}}-{{c.customerName}}</option>
+                        {% endif %}
+                        {% endfor %} 
+                    </select>
+                    <br>
+                    <span>Amount:</span>
+                    <input type="number" name="Amount" class="amount" required>
+                    
+                    <input class="btn" type="submit" value="Send" name="submitUPI">    
+                </form>
+            </div>
+    
+    
+            <div class="form" id="usingACCOUNT" name="Accountform" style="display: none;">
+                <form action="" method="post">
+                    {% csrf_token %}
+    
+                    <input type="hidden" name="senderID" value="{{selectedSender.accountNo}}" />
+                    <span>Account number: </span>
+                    <select id="receiver_Account_no" name="receiver_Account_no" placeholder="Sender Account number">
+                        {% for c in all_customers%}   
+                        <option value="{{c.accountNo}}" id="selectedreceiver">{{c.accountNo}}-{{c.customerName}}</option>
+                        {% endfor %} 
+                    </select>
+                    <br>
+    
+                    <span>Amount:</span>
+                    <input type="number" class="amount" name="Amount" required>
+                    <input class="btn" type="submit" name="submitAccount" value="Send"> 
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+
+    <script src="{% static 'javascript/script.js' %}"></script>
+    
+</body>
+</html>

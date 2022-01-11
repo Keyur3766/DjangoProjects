@@ -1,0 +1,118 @@
+<!-- {% for c in CustomerData.all %}
+                <div class="entry">
+                    {% if c.senderaccount.details|lower == accountNo|lower %}
+                    <h5>{{c.amount}} sent at {{c.timestamp}} to {{c.receiveraccount.customerName}}</h5>
+                    {% endif %}
+
+                    {% if c.receiveraccount.details|lower == accountNo|lower %}
+                    <h5>{{c.amount}} received {{c.timestamp}} from to {{c.receiveraccount.customerName}}</h5>
+                    {% endif %}
+                </div>
+                
+            {% endfor %} -->
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script src="https://kit.fontawesome.com/c646e69c73.js" crossorigin="anonymous"></script>
+    
+    <title>Bank Transaction System</title>
+</head>
+<body>
+
+    <nav class="navigation">
+        <ul>
+            
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'customers' %}">Customers</a></li>
+            <li><a href="{% url 'transactions' %}">Transactions</a></li>
+            
+        </ul>
+
+        <span>Banking System</span>
+    </nav>
+    
+    {% if messages %}
+        <div class="messages">
+                {% for message in messages %}
+                <h1>{{message}}</h1>
+                {% endfor %}
+            
+        </div>
+    {% endif %}
+        
+    
+
+    <div class="transaction_container">
+        <div class="Sender_header">
+            <div class="sender_upper">
+                <i class="fas fa-user" id="User"></i>
+                <h2>Sender: {{selectedSender.customerName}}</h2>
+            </div>
+            
+            
+            <div class="infoSender">
+                <span>Account number: {{selectedSender.accountNo}}</span><br>
+               
+                <span>Balance: {{selectedSender.balance}}</span><br>
+                <span>email: {{selectedSender.email}}</span><br>
+                <span>mobile: {{selectedSender.mobile}}</span>
+            </div>
+        </div>
+        <div class="transactions">
+            <div class="entries">
+                {% for c in CustomerData.all %}
+                <div class="entry">
+                    {% if c.senderaccount.details|lower == accountNo|lower %}
+                    <i class="fas fa-coins" id="credit_debit"></i>
+                    <div class="part1">
+                        
+                        
+                        <h2>to {{c.receiveraccount.customerName}}</h2>
+                        <p>{{c.timestamp}}</p>
+                    </div>
+                    <div class="part2">
+                        <h4 style="color: rgba(255, 0, 0, 0.801);"><i class="fas fa-rupee-sign" style="color: red;"></i>{{c.amount}}</h4>
+                        <p>Debited</p>
+                    </div>
+                    {% endif %}
+
+
+                    {% if c.receiveraccount.details|lower == accountNo|lower %}
+                    <i class="fas fa-rupee-sign" id="credit_debit"></i>
+                    <div class="part1">
+                        
+                        <h2>from {{c.senderaccount.customerName}}</h2>
+                        <p>{{c.timestamp}}</p>
+                    </div>
+                    <div class="part2">
+                        <h4 style="color: rgb(3, 122, 3);"><i class="fas fa-rupee-sign" style="color: green;"></i>{{c.amount}}</h4>
+                        <p>Credited</p>
+                    </div>
+                    {% endif %}
+                    <!-- {% if c.senderaccount.details|lower == accountNo|lower %}
+                    <h5>{{c.amount}} sent at {{c.timestamp}} to {{c.receiveraccount.customerName}}</h5>
+                    {% endif %}
+
+                    {% if c.receiveraccount.details|lower == accountNo|lower %}
+                    <h5>{{c.amount}} received {{c.timestamp}} from to {{c.receiveraccount.customerName}}</h5>
+                    {% endif %} -->
+                </div>
+                
+            {% endfor %}
+            </div>
+        </div>    
+    </div>
+
+    <script src="{% static 'javascript/script.js' %}"></script>
+    
+</body>
+</html>
